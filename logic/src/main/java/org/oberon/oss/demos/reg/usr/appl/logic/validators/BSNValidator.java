@@ -14,6 +14,6 @@ public class BSNValidator implements ConstraintValidator<BSN, String> {
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
-        return ValidatorEnum.BSN.getValidator().isValid(value);
+        return ValidatorEnum.BSN.isValid(value);
     }
 }

@@ -1,12 +1,8 @@
 package org.oberon.oss.demos.reg.usr.appl;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.oberon.oss.demos.reg.usr.appl.ValidatorEnum.BSN;
 
@@ -28,21 +24,6 @@ class ElevenProofTests {
             "087755798", "492315668", "247296016", "315011567", "392331913"
     })
     void testValidElfProofValidation(String bsnString) {
-        assertTrue(bsn.getValidator().isValid(bsnString));
-    }
-
-    @Test
-    void testDefinitionID() {
-        assertEquals(BSN, bsn.getDefinitionID());
-    }
-
-    @Test
-    void testWeighTable() {
-        assertEquals(List.of(9, 8, 7, 6, 5, 4, 3, 2, -1), bsn.getWeighTable());
-    }
-
-    @Test
-    void testMaxLength() {
-        assertEquals(9, bsn.getMaximumLength());
+        assertTrue(bsn.isValid(bsnString));
     }
 }

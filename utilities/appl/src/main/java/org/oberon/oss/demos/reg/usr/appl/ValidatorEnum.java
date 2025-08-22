@@ -1,5 +1,7 @@
 package org.oberon.oss.demos.reg.usr.appl;
 
+import org.oberon.oss.demos.reg.usr.utils.common.BaseValidator;
+
 import java.util.List;
 
 /**
@@ -8,32 +10,17 @@ import java.util.List;
  * @author TigerLilly64
  * @since 1.0.0
  */
-public enum ValidatorEnum implements ElevenProofDefinition<String, ValidatorEnum> {
-    BSN(new int[]{9, 8, 7, 6, 5, 4, 3, 2, -1});
+public enum ValidatorEnum implements BaseValidator<String> {
+    BSN(List.of(9, 8, 7, 6, 5, 4, 3, 2, -1));
 
-    private final ElevenProofDefinition<String, ValidatorEnum> definition;
+    private final StandardElevenProofDefinition<ValidatorEnum> definition;
 
-    ValidatorEnum(int[] weightTable) {
-        definition = new ElevenProofDefinitionImpl<>(this, weightTable);
+    ValidatorEnum(List<Integer> weightTable) {
+        definition = new StandardElevenProofDefinition<>(this, weightTable);
     }
 
     @Override
-    public ValidatorEnum getDefinitionID() {
-        return this;
-    }
-
-    @Override
-    public List<Integer> getWeighTable() {
-        return definition.getWeighTable();
-    }
-
-    @Override
-    public int getMaximumLength() {
-        return definition.getMaximumLength();
-    }
-
-    @Override
-    public ElevenProofValidator<String> getValidator() {
-        return definition.getValidator();
+    public boolean isValid(String source) {
+        return definition.getValidator().isValid(source);
     }
 }

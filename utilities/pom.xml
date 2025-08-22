@@ -15,6 +15,7 @@
     <modules>
         <module>test</module>
         <module>appl</module>
+        <module>common</module>
     </modules>
 
 

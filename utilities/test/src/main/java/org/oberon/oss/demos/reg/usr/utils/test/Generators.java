@@ -2,8 +2,12 @@ package org.oberon.oss.demos.reg.usr.utils.test;
 
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.oberon.oss.demos.reg.usr.utils.common.BaseValidator;
 
-import static org.oberon.oss.demos.reg.usr.appl.ValidatorEnum.BSN;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Data generators for testing purposes.
@@ -16,11 +20,14 @@ public class Generators {
     public static final int MIN_BSN_NUMBER = 10_000_000;
     public static final int MAX_BSN_NUMBER = 999_999_999;
 
-    @Getter
-    private final ElevenProofGenerator<String, Integer> bsnNumberGenerator;
+    private static final Map<String,ElevenProofGenerator<String,Integer>> GENERATOR_MAP = new ConcurrentHashMap<>();
 
-    {
-        bsnNumberGenerator = new DefaultElevenProofGenerator(MIN_BSN_NUMBER, MAX_BSN_NUMBER, BSN.getValidator());
+    public static void registerGenerator(@NotNull String id, int lowerBound, int higherBound, BaseValidator<String> validator) {
+        GENERATOR_MAP.putIfAbsent(id, new DefaultElevenProofGenerator(lowerBound, higherBound, validator));
+    }
+
+    public static @Nullable ElevenProofGenerator<String,Integer> getGenerator(@NotNull String id) {
+        return GENERATOR_MAP.get(id);
     }
 
 }

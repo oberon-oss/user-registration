@@ -1,17 +1,19 @@
 package org.oberon.oss.demos.reg.usr.appl;
 
+import org.oberon.oss.demos.reg.usr.utils.common.BaseValidator;
+
 import java.util.List;
 
 /**
  * Defines the operational attributes for any eleven test based validation
  *
  * @param <S> The type of object that contains the data to be validated
- * @param <E> The enum who's members will act as IDs
+ * @param <I> The class type of the ID associated with a definition instance
  *
  * @author TigerLilly64
  * @since 1.0.0
  */
-public interface ElevenProofDefinition<S, E extends Enum<E>> {
+public interface ElevenProofDefinition<S, I> {
     /**
      * Returns the ID for an eleven proof definition
      *
@@ -19,7 +21,7 @@ public interface ElevenProofDefinition<S, E extends Enum<E>> {
      *
      * @since 1.0.0
      */
-    E getDefinitionID();
+    I getDefinitionID();
 
     /**
      * Returns the weight table used by the eleven proof definition.
@@ -28,7 +30,7 @@ public interface ElevenProofDefinition<S, E extends Enum<E>> {
      *
      * @since 1.0.0
      */
-    List<Integer> getWeighTable();
+    List<Integer> getWeightTable();
 
     /**
      * returns the maximum length of the data object that can be analyzed.
@@ -42,9 +44,9 @@ public interface ElevenProofDefinition<S, E extends Enum<E>> {
     /**
      * Returns a validator that can be used to validate data to be valid according to the implemented eleven proof.
      *
-     * @return An instance of the {@link ElevenProofValidator} interface to be used for validation.
+     * @return An instance of the {@link BaseValidator} interface to be used for validation.
      *
      * @since 1.0.0
      */
-    ElevenProofValidator<S> getValidator();
+    BaseValidator<S> getValidator();
 }

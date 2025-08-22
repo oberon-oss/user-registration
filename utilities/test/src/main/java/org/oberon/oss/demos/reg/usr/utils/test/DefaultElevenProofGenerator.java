@@ -1,7 +1,8 @@
 package org.oberon.oss.demos.reg.usr.utils.test;
 
 import lombok.extern.log4j.Log4j2;
-import org.oberon.oss.demos.reg.usr.appl.ElevenProofValidator;
+import org.oberon.oss.demos.reg.usr.utils.common.BaseValidator;
+
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ import java.util.Random;
 public class DefaultElevenProofGenerator implements ElevenProofGenerator<String, Integer> {
     private final int lowerBound;
     private final int upperBound;
-    private final ElevenProofValidator<String> validator;
+    private final BaseValidator<String> validator;
     private final Random random;
 
     /**
@@ -32,7 +33,7 @@ public class DefaultElevenProofGenerator implements ElevenProofGenerator<String,
      *
      * @since 1.0.0
      */
-    public DefaultElevenProofGenerator(Random randomGenerator, int lowerBound, int upperBound, ElevenProofValidator<String> validator) {
+    public DefaultElevenProofGenerator(Random randomGenerator, int lowerBound, int upperBound, BaseValidator<String> validator) {
         this.lowerBound = lowerBound;
         this.upperBound = upperBound;
         this.validator = validator;
@@ -42,13 +43,13 @@ public class DefaultElevenProofGenerator implements ElevenProofGenerator<String,
     /**
      * Constructs a new generator using an instance of {@link SecureRandom} generator.
      *
-     * @param lowerBound      The lower bound (inclusive) of the generated data.
-     * @param upperBound      The upper bound (inclusive) of the generated data.
-     * @param validator       The validator to use to determine if generated value(s) are valid or not.
+     * @param lowerBound The lower bound (inclusive) of the generated data.
+     * @param upperBound The upper bound (inclusive) of the generated data.
+     * @param validator  The validator to use to determine if generated value(s) are valid or not.
      *
      * @since 1.0.0
      */
-    public DefaultElevenProofGenerator(int lowerBound, int upperBound, ElevenProofValidator<String> validator) {
+    public DefaultElevenProofGenerator(int lowerBound, int upperBound, BaseValidator<String> validator) {
         this(new SecureRandom(), lowerBound, upperBound, validator);
     }
 
