@@ -22,5 +22,5 @@ public interface ElevenProofComplianceValidator<S> {
      *
      * @since 1.0.0
      */
-    boolean isElevenProofCompliant(String source, final List<Integer> weightTable);
+    boolean isElevenProofCompliant(S source, final List<Integer> weightTable);
 }

@@ -1,7 +1,6 @@
 package org.oberon.oss.demos.reg.usr.appl;
 
 import org.junit.jupiter.api.Test;
-import org.oberon.oss.demos.reg.usr.utils.test.DefaultElevenProofGenerator;
 
 import java.util.List;
 
@@ -18,6 +17,7 @@ class StandardElevenProofDefinitionTest {
 
     }
 
+    @Test
     void testConstructorWithUserSuppliedElevenProofComplianceValidator() {
         ElevenProofComplianceValidator<String> validator = new ElevenProofComplianceValidator<>() {
             @Override
