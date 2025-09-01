@@ -9,5 +9,20 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
-    <artifactId>user-registration-appl-data-db</artifactId>
+
+    <artifactId>user-registration-appl-data-repo</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <version>${project.version}</version>
+            <artifactId>user-registration-appl-data-entities</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-envers</artifactId>
+            <version>6.6.26.Final</version>
+        </dependency>
+    </dependencies>
 </project>

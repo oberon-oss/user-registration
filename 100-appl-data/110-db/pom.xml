@@ -7,14 +7,16 @@
         <groupId>org.oberon.oss.demos</groupId>
         <artifactId>user-registration</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>user-registration-appl-data</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>user-registration-appl-data-db</artifactId>
 
-    <modules>
-        <module>db</module>
-        <module>entities</module>
-    </modules>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
 </project>

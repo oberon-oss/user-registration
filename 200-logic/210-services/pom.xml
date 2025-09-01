@@ -5,17 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.oberon.oss.demos</groupId>
-        <artifactId>user-registration</artifactId>
+        <artifactId>user-registration-appl-logic</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>user-registration-appl-logic</artifactId>
+    <artifactId>user-registration-appl-logic-services</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <version>${project.version}</version>
-            <artifactId>user-registration-appl-data-entities</artifactId>
+            <artifactId>user-registration-appl-data-repo</artifactId>
         </dependency>
     </dependencies>
 </project>

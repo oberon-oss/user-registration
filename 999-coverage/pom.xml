@@ -27,7 +27,17 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <version>${project.version}</version>
-            <artifactId>user-registration-appl-logic</artifactId>
+            <artifactId>user-registration-appl-data-repo</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <version>${project.version}</version>
+            <artifactId>user-registration-appl-logic-services</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <version>${project.version}</version>
+            <artifactId>user-registration-appl-logic-controllers</artifactId>
         </dependency>
     </dependencies>
 
