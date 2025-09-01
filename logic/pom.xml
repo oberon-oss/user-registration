@@ -17,11 +17,5 @@
             <version>${project.version}</version>
             <artifactId>user-registration-appl-data-entities</artifactId>
         </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <version>${project.version}</version>
-            <artifactId>user-registration-utilities-appl</artifactId>
-            <scope>compile</scope>
-        </dependency>
     </dependencies>
 </project>

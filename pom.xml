@@ -15,6 +15,8 @@
     <artifactId>user-registration</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
+
+
     <name>user-registration</name>
     <description>user-registration</description>
 
@@ -22,7 +24,6 @@
         <module>appl-data</module>
         <module>logic</module>
         <module>appl</module>
-        <module>utilities</module>
         <module>coverage</module>
     </modules>
 
@@ -66,7 +67,7 @@
             <version>1.26.1</version>
         </dependency>
 
-        <!-- -->
+        <!-- End of dependency overrides -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -102,6 +103,24 @@
             <optional>true</optional>
         </dependency>
         <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>17.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>eu.oberon.oss.tools</groupId>
+            <artifactId>validator-utils-base</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>eu.oberon.oss.tools</groupId>
+            <artifactId>validator-utils-jakarta</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
+        <!-- Testing dependencies -->
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
@@ -122,11 +141,22 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-            <version>17.0.0</version>
+            <groupId>eu.oberon.oss</groupId>
+            <artifactId>random-data-generator-base</artifactId>
+            <version>1.1.0</version>
+            <scope>test</scope>
         </dependency>
+
     </dependencies>
+
+    <!-- Access to public packages from oberon-oss.eu -->
+    <repositories>
+        <repository>
+            <id>github-public</id>
+            <url>https://public:&#103;hp_UCA2P3c85UHJAXAbYpvrdO75dy6CSz1Yqby2@maven.pkg.github.com/oberon-oss/*
+            </url>
+        </repository>
+    </repositories>
 
     <build>
         <pluginManagement>

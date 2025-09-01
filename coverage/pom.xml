@@ -29,22 +29,6 @@
             <version>${project.version}</version>
             <artifactId>user-registration-appl-logic</artifactId>
         </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <version>${project.version}</version>
-            <artifactId>user-registration-utilities-appl</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <version>${project.version}</version>
-            <artifactId>user-registration-utilities-common</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <version>${project.version}</version>
-            <artifactId>user-registration-utilities-test</artifactId>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <build>
