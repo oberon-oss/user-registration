@@ -5,19 +5,18 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.oberon.oss.demos</groupId>
-        <artifactId>spring-demo-logic</artifactId>
+        <artifactId>spring-demo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
-
-<artifactId>spring-demo-controllers</artifactId>
+    <artifactId>spring-demo-db</artifactId>
 
     <dependencies>
         <dependency>
-            <version>${project.version}</version>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>spring-demo-services</artifactId>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
-
 </project>

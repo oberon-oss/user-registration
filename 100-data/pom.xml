@@ -5,18 +5,23 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.oberon.oss.demos</groupId>
-        <artifactId>user-registration</artifactId>
+        <artifactId>spring-demo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>user-registration-appl-data-db</artifactId>
+    <artifactId>spring-demo-data</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>110-db</module>
+        <module>120-entities</module>
+        <module>130-repositories</module>
+    </modules>
 
     <dependencies>
         <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <scope>runtime</scope>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
     </dependencies>
 </project>

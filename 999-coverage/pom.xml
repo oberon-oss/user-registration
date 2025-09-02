@@ -5,39 +5,39 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.oberon.oss.demos</groupId>
-        <artifactId>user-registration</artifactId>
+        <artifactId>spring-demo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <packaging>pom</packaging>
 
-    <artifactId>register-user-coverage</artifactId>
+    <artifactId>spring-demo-coverage</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <version>${project.version}</version>
-            <artifactId>user-registration-appl-data-db</artifactId>
+            <artifactId>spring-demo-db</artifactId>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <version>${project.version}</version>
-            <artifactId>user-registration-appl-data-entities</artifactId>
+        <artifactId>spring-demo-entities</artifactId>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <version>${project.version}</version>
-            <artifactId>user-registration-appl-data-repo</artifactId>
+            <artifactId>spring-demo-repo</artifactId>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <version>${project.version}</version>
-            <artifactId>user-registration-appl-logic-services</artifactId>
+            <artifactId>spring-demo-services</artifactId>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <version>${project.version}</version>
-            <artifactId>user-registration-appl-logic-controllers</artifactId>
+        <artifactId>spring-demo-controllers</artifactId>
         </dependency>
     </dependencies>
 

@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.oberon.oss.demos</groupId>
-        <artifactId>user-registration</artifactId>
+        <artifactId>spring-demo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>user-registration-appl-logic</artifactId>
+    <artifactId>spring-demo-logic</artifactId>
     <packaging>pom</packaging>
 
     <modules>

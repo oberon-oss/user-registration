@@ -12,7 +12,7 @@
 
 
     <groupId>org.oberon.oss.demos</groupId>
-    <artifactId>user-registration</artifactId>
+    <artifactId>spring-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -21,7 +21,7 @@
     <description>user-registration</description>
 
     <modules>
-        <module>100-appl-data</module>
+        <module>100-data</module>
         <module>200-logic</module>
         <module>300-appl</module>
         <module>999-coverage</module>

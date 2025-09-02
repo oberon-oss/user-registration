@@ -5,17 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.oberon.oss.demos</groupId>
-        <artifactId>user-registration</artifactId>
+        <artifactId>spring-demo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>user-registration-appl</artifactId>
+    <artifactId>spring-demo-application</artifactId>
 
     <dependencies>
         <dependency>
             <version>${project.version}</version>
             <groupId>${project.groupId}</groupId>
-            <artifactId>user-registration-appl-logic-controllers</artifactId>
+        <artifactId>spring-demo-controllers</artifactId>
         </dependency>
     </dependencies>
 

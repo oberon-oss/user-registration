@@ -5,23 +5,24 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.oberon.oss.demos</groupId>
-        <artifactId>user-registration</artifactId>
+        <artifactId>spring-demo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>user-registration-appl-data</artifactId>
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>110-db</module>
-        <module>120-entities</module>
-        <module>130-repositories</module>
-    </modules>
+    <artifactId>spring-demo-repo</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <groupId>${project.groupId}</groupId>
+            <version>${project.version}</version>
+        <artifactId>spring-demo-entities</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-envers</artifactId>
+            <version>6.6.26.Final</version>
         </dependency>
     </dependencies>
 </project>
