@@ -15,7 +15,7 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <version>${project.version}</version>
-            <artifactId>spring-demo-entities</artifactId>
+            <artifactId>spring-demo-repo</artifactId>
         </dependency>
     </dependencies>
 </project>
