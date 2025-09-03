@@ -12,6 +12,6 @@ jobs:
             - name: JIB container build and publish
               uses: MathieuSoysal/jib-container-publish.yml@v2.1.5
               with:
-                  PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+                  PASSWORD: ${{ secrets.JIB_DEPLOY_TOKEN }}
                   java-version: 21
                   
