@@ -9,6 +9,16 @@ import lombok.Setter;
 
 import java.util.UUID;
 
+/**
+ * Default implementation for the {@link BaseEntity} interface. This implementation resolves the generic parameters from
+ * the interface as follows
+ * <ul>
+ * <li>{@link UUID} as the class type for {@literal <I>}</li>
+ * </ul>
+ *
+ * @author TigerLilly64
+ * @since 1.0.0
+ */
 @Getter
 @Setter
 @MappedSuperclass

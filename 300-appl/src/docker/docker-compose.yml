@@ -1,0 +1,27 @@
+services:
+    app:
+        image: 'spring-boot-demo:0.0.1-SNAPSHOT'
+        ports:
+            - "18080:8080"
+        build:
+            context: ./
+            dockerfile: Dockerfile
+            tags:
+                - spring-boot-demo:0.0.1-SNAPSHOT
+        container_name: spring-boot-demo
+        depends_on:
+            - db
+        environment:
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/compose-postgres
+            - SPRING_DATASOURCE_USERNAME=compose-postgres
+            - SPRING_DATASOURCE_PASSWORD=compose-postgres
+            - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+    db:
+        image: 'postgres:17'
+        ports:
+            - "54301:5432"
+        container_name: postgres-17
+        environment:
+            - POSTGRES_USER=compose-postgres
+            - POSTGRES_PASSWORD=compose-postgres

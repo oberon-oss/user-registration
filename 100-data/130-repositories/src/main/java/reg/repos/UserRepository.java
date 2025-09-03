@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import reg.repos.defs.DefaultAuditedRepository;
 
 @Repository
-public interface AuditedUserRepository extends DefaultAuditedRepository<User> {
+public interface UserRepository extends DefaultAuditedRepository<User> {
 }
