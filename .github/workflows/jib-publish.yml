@@ -14,4 +14,6 @@ jobs:
               with:
                   PASSWORD: ${{ secrets.JIB_DEPLOY_TOKEN }}
                   java-version: 21
+                  module: 300-appl
+                  mainClass: eu.oberon.oss.demos.reg.appl.UserRegistrationApplication
                   
