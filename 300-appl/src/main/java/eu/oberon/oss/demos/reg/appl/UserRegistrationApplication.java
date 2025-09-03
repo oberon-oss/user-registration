@@ -1,4 +1,4 @@
-package org.oberon.oss.demos.reg.appl;
+package eu.oberon.oss.demos.reg.appl;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,7 +1,7 @@
-package org.oberon.oss.demos.userregistration;
+package eu.oberon.oss.demos.userregistration;
 
 import org.junit.jupiter.api.Test;
-import org.oberon.oss.demos.reg.appl.UserRegistrationApplication;
+import eu.oberon.oss.demos.reg.appl.UserRegistrationApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
 

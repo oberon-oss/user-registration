@@ -1,6 +1,6 @@
-package org.oberon.oss.demos.userregistration;
+package eu.oberon.oss.demos.userregistration;
 
-import org.oberon.oss.demos.reg.appl.UserRegistrationApplication;
+import eu.oberon.oss.demos.reg.appl.UserRegistrationApplication;
 import org.springframework.boot.SpringApplication;
 
 public class TestUserRegistrationApplication {

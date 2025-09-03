@@ -1,4 +1,4 @@
-package org.oberon.oss.demos.userregistration;
+package eu.oberon.oss.demos.userregistration;
 
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
