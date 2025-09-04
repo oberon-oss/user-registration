@@ -37,9 +37,17 @@
 
         <mockito-core.version>5.17.0</mockito-core.version>
         <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
+        <eu-oberon-oss-validator-utils.version>1.0.1</eu-oberon-oss-validator-utils.version>
         <sonar.coverage.jacoco.xmlReportPaths>
             ${maven.multiModuleProjectDirectory}/coverage/target/site/jacoco-aggregate/jacoco.xml
         </sonar.coverage.jacoco.xmlReportPaths>
+
+
+        <from-image-name>docker.io/library/eclipse-temurin:21.0.8_9-jdk-noble</from-image-name>
+        <to-image-name>ghcr.io/oberon-oss/user-registration</to-image-name>
+        <target-container.version>0.0.1</target-container.version>
+
+        <main-class>eu.oberon.oss.demos.reg.appl.UserRegistrationApplication</main-class>
     </properties>
 
 
@@ -88,12 +96,12 @@
         <dependency>
             <groupId>eu.oberon.oss.tools</groupId>
             <artifactId>validator-utils-base</artifactId>
-            <version>1.0.1</version>
+            <version>${eu-oberon-oss-validator-utils.version}</version>
         </dependency>
         <dependency>
             <groupId>eu.oberon.oss.tools</groupId>
             <artifactId>validator-utils-jakarta</artifactId>
-            <version>1.0.1</version>
+            <version>${eu-oberon-oss-validator-utils.version}</version>
         </dependency>
 
         <!-- Testing dependencies -->
@@ -141,19 +149,6 @@
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>${jacoco-maven-plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>com.google.cloud.tools</groupId>
-                    <artifactId>jib-maven-plugin</artifactId>
-                    <version>3.4.6</version>
-                    <configuration>
-                        <container>
-                            <mainClass>eu.oberon.oss.demos.reg.appl.UserRegistrationApplication</mainClass>
-                        </container>
-                        <from>
-                            <image>eclipse-temurin:21.0.8_9-jdk-noble</image>
-                        </from>
-                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -235,7 +230,7 @@
             </properties>
         </profile>
         <profile>
-            <id>dockerize</id>
+            <id>jib-create-container</id>
             <build>
                 <plugins>
                     <plugin>
@@ -243,12 +238,15 @@
                         <artifactId>jib-maven-plugin</artifactId>
                         <version>3.4.6</version>
                         <configuration>
-                            <to>
-                                <image>/localhost/spring-demo:0.0.1</image>
-                            </to>
                             <container>
-                                <mainClass>eu.oberon.oss.demos.reg.appl.UserRegistrationApplication</mainClass>
+                                <mainClass>${main-class}</mainClass>
                             </container>
+                            <from>
+                                <image></image>
+                            </from>
+                            <to>
+                                <image>${to-image-name}:${target-container.version}</image>
+                            </to>
                         </configuration>
                     </plugin>
                 </plugins>
